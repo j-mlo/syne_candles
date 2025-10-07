@@ -1,0 +1,1 @@
+web: gunicorn syne_candles.wsgi
