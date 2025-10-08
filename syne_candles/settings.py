@@ -27,9 +27,12 @@ TEMPLATES_DIR = [
 SECRET_KEY = 'django-insecure-@!n_n8lsqxhr9&tk6=4zc5j%-c^4f@(1@9!moc*8rxe_bda%6d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.herokuapp',
+    '.127.0.0.1',
+]
 
 
 # Application definition
@@ -45,7 +48,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    
+
     'home',
 ]
 
