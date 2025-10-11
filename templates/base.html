@@ -30,59 +30,83 @@
   
   <body>
 
-    <header class="container-fluid fixed-top">
-      <div class="row bg-white pt-lg-2 d-none d-lg-flex" id="topnav">
-        <!-- Search Bar -->
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-          <form method="GET" action="">
-            <div class="input-group w-100">
-              <input type="text" name="q" class="rounded-5">
-              <div class="input-group-append">
-                <button class="btn">
-                  <span class="icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                  </span>
-                </button>
-              </div>
+    <header class="container-fluid fixed-top bg-white">
+
+      <!-- TOP BAR -->
+      <div class="row" id="topnav"> 
+
+        <div class="col-4 my-auto py-1 py-lg-0">
+           <!-- Mobile Menu Toggle -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button> 
+          <!-- Search Bar (for lg screens and up)-->
+          <form method="GET" action="" class="d-none d-lg-flex  searchbar-container">
+            <div class="input-group w-75 mx-auto">
+              <input type="text" name="q" class="form-control rounded-5">
+              <button class="btn">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
             </div>
           </form>
         </div>
+
         <!-- Logo -->
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center">
-          <a href="{% url 'home' %}" class="navbar-brand logo-img">
-              <img src="/media/syne-logo.png" alt="syne-logo" width="100">
+        <div class="col-4 my-auto py-1 py-lg-0 text-center">
+          <a href="{% url 'home' %}" class="navbar-brand mx-auto logo-img text-center">
+            <img src="/media/syne-logo.png" alt="syne-logo" width="100">
           </a>
         </div>
+
         <!-- Account & Shopping Cart-->
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-right">
-          <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-            <li class="list-inline-item dropdown">
-              <a href="" class="nav-link icon" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa-solid fa-user"></i>
-              </a>
-              <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                {% if request.user.is_authenticated %}
-                {% if request.user.is_authenticated %}
+        <div class="col-4 my-auto py-1 py-lg-0 text-end text-md-center icon-group">
+          <a href="" class="nav-link icon me-md-2" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-end border-0" aria-labelledby="user-options">
+            {% if request.user.is_authenticated %}
+              {% if request.user.is_authenticated %}
                 <a href="" class="dropdown-item">Product Management</a>
-                {% endif %}
-                <a href="" class="dropdown-item">My Profile</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                {% else %}
-                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                {% endif %}
-              </div>
-            </li>
-            <li class="list-inline-item">
-              <a href="">
-                <div class="icon">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                </div>
-              </a>
-            </li>
-          </ul>
+              {% endif %}
+              <a href="" class="dropdown-item">My Profile</a>
+              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            {% else %}
+              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+            {% endif %}
+          </div>
+            
+          <a href="" class="nav-link icon">
+              <i class="fa-solid fa-bag-shopping"></i>
+          </a>
         </div>
+        
       </div>
+
+      <!-- NAVBAR -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="collapse navbar-collapse justify-content-center nav-border" id="navbarNavAltMarkup">
+          <div class="navbar-nav text-center">
+            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+            <a class="nav-link" href="#">Shop</a>
+            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="#">Reviews</a>
+            <a class="nav-link" href="#">Contact</a>
+
+            <div class="d-inline-block d-lg-none text-center py-2">
+              <form method="GET" action="" class="text-center px-3 searchbar-container">
+              <div class="input-group mx-auto">
+                <input type="text" name="q" class="from-control rounded-5">
+                <button class="btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
     </header>
 
     {% if messages %}
@@ -94,6 +118,16 @@
 
     {% block content %}
     {% endblock %}
+
+    <footer class="fixed-bottom">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-12 text-center py-3">
+            &copy; 2025 Syne Candles, All rights reserved
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
