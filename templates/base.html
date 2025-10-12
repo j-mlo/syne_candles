@@ -37,7 +37,7 @@
 
         <div class="col-4 my-auto py-1 py-lg-0">
            <!-- Mobile Menu Toggle -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button> 
           <!-- Search Bar (for lg screens and up)-->
@@ -112,10 +112,7 @@
     {% if messages %}
       <div class="message-container"></div>
     {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
-
+    
     {% block content %}
     {% endblock %}
 
