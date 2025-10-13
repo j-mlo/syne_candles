@@ -8,7 +8,7 @@ body {
     height: calc(100vh - 164px);
     font-family: 'DM Sans', sans-serif;
     font-weight: 200;
-    padding-top: 153px;
+    padding-bottom: 60px;
 }
 
 /* MAIN HEADER */
@@ -30,7 +30,6 @@ body {
 }
 
 .navbar-toggler-icon {
-    background-image: none;
     color: black;
     font-size: 2rem;
 }
@@ -56,10 +55,6 @@ nav a:hover {
 
 .card-img-top {
     object-fit: contain;
-}
-
-.product-container {
-    padding-bottom: 60px;
 }
 
 /* FOOTER */
@@ -106,13 +101,18 @@ footer {
 
 /* ------------------------- MEDIA QUERIES */
 
-/* Fixed top navbar on medium and larger */ 
+/* Medium Screens and below */
+@media (max-width: 992px) {
+
+    body {
+        padding-top: 119px; /* Pushes the body to not overlap with the header */ 
+    }
+}
+
+/* Large screens up*/ 
 @media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
+
+    body {
+        padding-top: 153px; /* Pushes the body to not overlap with the header & navbar */ 
     }
 }
