@@ -41,7 +41,7 @@
               <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
           </button> 
           <!-- Search Bar (for lg screens and up)-->
-          <form method="GET" action="" class="d-none d-lg-flex  searchbar-container">
+          <form method="GET" action="{% url 'products' %}" class="d-none d-lg-flex  searchbar-container">
             <div class="input-group w-75 mx-auto">
               <input type="text" name="q" class="form-control rounded-5">
               <button class="btn">
@@ -93,8 +93,9 @@
             <a class="nav-link" href="#">Reviews</a>
             <a class="nav-link" href="#">Contact</a>
 
+            <!-- Search bar (only visible on sm and md screens)-->
             <div class="d-inline-block d-lg-none text-center py-2">
-              <form method="GET" action="" class="text-center px-3 searchbar-container">
+              <form method="GET" action="{% url 'products' %}" class="text-center px-3 searchbar-container">
               <div class="input-group mx-auto d-block">
                 <input type="text" name="q" class="from-control rounded-5">
                 <button class="btn">
