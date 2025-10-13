@@ -48,6 +48,10 @@ body {
     padding: 0;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
 /* SHOP */
 
 .card-img-top {
@@ -75,12 +79,29 @@ footer {
     width: 2rem;
 }
 
+.icon:hover {
+    color: #5B3822;
+}
+
 /* BUTTONS */
 
 .shop-now-button {
     color: #fff;
     border-bottom: 1px solid #fff;
     border-radius: 0;
+}
+
+.btn-black {
+    background-color: black;
+    color: white;
+    border-radius: 0%;
+}
+
+.btn-black:hover {
+    background-color: white;
+    color: black;
+    border-radius: 0%;
+    border: 2px solid black;
 }
 
 /* ------------------------- MEDIA QUERIES */
