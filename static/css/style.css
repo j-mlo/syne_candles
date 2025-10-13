@@ -38,6 +38,12 @@ body {
     font-weight: 400;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HOMEPAGE */
+
 #hero-container {
     background: url('/media/SyneCandles-4.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -45,10 +51,6 @@ body {
     min-width: 100vw;
     display: block;
     padding: 0;
-}
-
-nav a:hover {
-    text-decoration: underline;
 }
 
 /* SHOP */

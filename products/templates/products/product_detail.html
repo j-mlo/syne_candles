@@ -8,8 +8,8 @@
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="my-5" id="product-image-container">
                 {% if product.main_image %}
-                    <a href="{{ product.main_image.url }}" target="_blank">
-                        <img src="{{ product.main_imag.url }}" alt="{{ product.name }}" class="card-img-top rounded-0">
+                    <a href="{{ product.main_image }}" target="_blank">
+                        <img src="{{ product.main_image }}" alt="{{ product.name }}" class="card-img-top rounded-0">
                     </a>
                 {% else %}
                     <a href="">
@@ -20,7 +20,7 @@
         </div>
         <div class="col-12 col-md-6 col-lg-4">
             <div class="mb-5 mt-md-5" id="product-detail-container">
-
+                <!-- Product Info -->
                 <h4 class="mb-0">{{ product.name }}</h4>
                 
                 <div class="row">
@@ -36,8 +36,8 @@
                 
                 <hr class="my-0">
 
-                <p>{{ product.subtitle }}</p>
-                <p class="mt-3">{{ product.description }}</p>
+                <p class="mt-3">{{ product.subtitle }}</p>
+                <p>{{ product.description }}</p>
 
                 {% if product.is_candle %}
                     <p>Our candles are made by hand in Cardiff, UK with soy wax and essential oils - that’s it. We love simple things.</p>
@@ -58,7 +58,7 @@
             </form>
 
             <!-- Reviews section -->
-            <div class="mt-4">
+            <div class="mt-4 mb-4">
                 <h5>Customer Reviews:</h5>
             </div>
         </div>
