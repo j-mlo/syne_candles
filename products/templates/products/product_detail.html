@@ -8,13 +8,9 @@
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
             <div class="my-5" id="product-image-container">
                 {% if product.main_image %}
-                    <a href="{{ product.main_image }}" target="_blank">
-                        <img src="{{ product.main_image }}" alt="{{ product.name }}" class="card-img-top rounded-0">
-                    </a>
+                    <img src="{{ product.main_image.url }}" alt="{{ product.name }}" class="card-img-top rounded-0">
                 {% else %}
-                    <a href="">
-                        <img src="{{ MEDIA_URL }}product-placeholder.jpg" alt="{{ product.name }}" class="card-img-top rounded-0">
-                    </a>
+                    <img src="/media/products/product-placeholder.jpg" alt="{{ product.name }}" class="card-img-top rounded-0">
                 {% endif %}
             </div>
         </div>

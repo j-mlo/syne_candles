@@ -5,7 +5,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col text-center mt-3">
-            <h2>All Products</h2>
+            <h2>Our Products</h2>
         </div>
     </div>
     <div class="row py-auto">
@@ -34,11 +34,11 @@
                             <!-- Product Image -->
                             {% if product.main_image %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="card-img-top rounded-0">
+                                    <img src="{{ product.main_image.url }}" alt="{{ product.name }}" class="card-img-top rounded-0">
                                 </a>
                             {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img src="{{ MEDIA_URL }}product-placeholder.jpg" alt="{{ product.name }}" class="card-img-top rounded-0">
+                                    <img src="/media/products/product-placeholder.jpg" alt="{{ product.name }}" class="card-img-top rounded-0">
                                 </a>
                             {% endif %}
                             <!-- Product Name -->
@@ -76,21 +76,30 @@
     {{ block.super }}
 
     <script>
-        document.getElementByClass('sort-selector').addEventListener('change', function () {
+        // Run after DOM is ready (extra-safe)
+        document.addEventListener('DOMContentLoaded', function () {
+        
+            const select = document.querySelector('.sort-selector');
+            if (!select) {
+            console.error('Sort select not found');
+            return;
+            }
+            select.addEventListener('change', function () {
             const selectedVal = this.value;
-            let currentUrl = new URL(window.location);
+            const currentUrl = new URL(window.location.href);
 
             if (selectedVal !== 'reset') {
                 const [sort, direction] = selectedVal.split('_');
-                currentUrl.searchParams.set('sort', sort)
-                currentUrl.searchParams.set('direction', direction)
+                currentUrl.searchParams.set('sort', sort);
+                currentUrl.searchParams.set('direction', direction);
             } else {
-                currentUrl.searchParams.delete('sort')
-                currentUrl.searchParams.delete('direction')
+                currentUrl.searchParams.delete('sort');
+                currentUrl.searchParams.delete('direction');
             }
 
-            window.location.href = currentUrl;
+        window.location.href = currentUrl.toString();
         });
-    </script>
+    });
+</script>
 
 {% endblock %}
