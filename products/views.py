@@ -13,7 +13,7 @@ def all_products(request):
     direction = None
 
     if request.GET:
-        # Query search
+        # Query search 
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -26,19 +26,22 @@ def all_products(request):
         # Product sorting
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
-            sort = sortkey
+            direction = request.GET.get('direction', 'asc')
     
             if sortkey == 'name':
-                sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
-            
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
+                sortkey = 'lower_name'
+            elif sortkey == 'price':
+                 sortkey = 'price'
+            elif sortkey == 'rating':
+                 sortkey = 'rating'
+
+            if direction == 'desc':
+                sortkey = f'-{sortkey}'
+    
             products = products.order_by(sortkey)
 
-    current_sorting = f'{sort}_{direction}' 
+    current_sorting = f"{request.GET.get('sort', 'None')}_{request.GET.get('direction', 'None')}"
 
     context = {
         'products': products,
