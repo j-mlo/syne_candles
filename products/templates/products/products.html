@@ -10,9 +10,14 @@
     </div>
     <div class="row py-auto">
         <div class="product-container col-10 offset-1">
-            <!-- Sort Selector: price, name and rating -->
             <div class="row my-4">
-                <div class="col-12" id="product-sort">
+                <!-- Product counter and search term display-->
+                <div class="col-6">
+                    <p class="mb-0">{{ products|length }} Products {% if search_term %} found for <strong>{{ search_term }}</strong>{% endif %}</p>
+                    <p class="my-0"><i class="fa-solid fa-arrow-left-long arrow-icon"></i> <a class="general-link" href="{% url 'products' %}">All Products</a></p>
+                </div>
+                <!-- Sort selector: price, name & rating-->
+                <div class="col-6" id="product-sort">
                     <div class="sort-select-wrapper text-end">
                         <select name="sort-selector" class="sort-selector custom-select rounded-0 border{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                             <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by</option>

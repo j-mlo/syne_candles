@@ -11,6 +11,23 @@ body {
     padding-bottom: 60px;
 }
 
+.general-link {
+    color: black;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+}
+
+.general-link:hover {
+    color: black;
+    font-weight: bolder;
+    text-decoration: none;
+    border: none;
+}
+
+.arrow-icon {
+    font-weight: 100;
+}
+
 /* MAIN HEADER */
 
 .logo-img img {
