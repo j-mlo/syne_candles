@@ -14,7 +14,7 @@
                 <!-- Product counter and search term display-->
                 <div class="col-6">
                     <p class="mb-0">{{ products|length }} Products {% if search_term %} found for <strong>{{ search_term }}</strong>{% endif %}</p>
-                    <p class="my-0"><i class="fa-solid fa-arrow-left-long arrow-icon"></i> <a class="general-link" href="{% url 'products' %}">All Products</a></p>
+                    {% if search_term %}<p class="my-0"><i class="fa-solid fa-arrow-left-long arrow-icon"></i> <a class="general-link" href="{% url 'products' %}">All Products</a></p>{% endif %}
                 </div>
                 <!-- Sort selector: price, name & rating-->
                 <div class="col-6" id="product-sort">
