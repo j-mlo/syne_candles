@@ -23,10 +23,6 @@ body {
     border: none;
 }
 
-.arrow-icon {
-    font-weight: 100;
-}
-
 /* Buttons */
 
 .shop-now-button {
@@ -75,6 +71,14 @@ body {
 
 .icon:hover {
     color: #5B3822;
+}
+
+.arrow-icon {
+    font-weight: 100;
+}
+
+.quantity-icon {
+    padding: 0;
 }
 
 /* MAIN HEADER */
@@ -133,8 +137,15 @@ nav a:hover {
 }
 
 .quantity-input {
-    border: 2px solid black;
+    border: 1px solid black;
     text-align: center;
+}
+
+/* BASKET */
+
+.update-link, 
+.remove-item {
+    cursor: pointer;
 }
 
 /* FOOTER */
