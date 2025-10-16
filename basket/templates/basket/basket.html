@@ -9,7 +9,9 @@
                 <h2 class="mb-3">Shopping Basket</h2>
             </div>
             {% if basket_items %}
-                <div class="table-responsive-rounded"></div>
+                <div class="table-responsive-rounded">
+                    {{ basket_items }}
+                </div>
             {% else %}
                 <p class="lead mt-5 mb-3">Your basket is currently empty...</p>
                 <a class="btn btn-lg btn-black" href="{% url 'products' %}">Keep Shopping</a>

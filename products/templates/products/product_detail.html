@@ -5,7 +5,11 @@
 
 <div class="container-fluid">
     <div class="row">
+        <div class="col-12 offset-lg-2">
+                <p class="mt-4 mb-0"><i class="fa-solid fa-arrow-left-long arrow-icon"></i> <a class="general-link" href="{% url 'products' %}">All Products</a></p>
+            </div>
         <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <!-- Product Image -->
             <div class="my-5" id="product-image-container">
                 {% if product.main_image %}
                     <img src="{{ product.main_image.url }}" alt="{{ product.name }}" class="card-img-top rounded-0">

@@ -60,6 +60,7 @@
 
         <!-- Account & Shopping Basket -->
         <div class="col-4 my-auto py-1 py-lg-0 text-end text-md-center icon-group">
+          <!-- User -->
           <a href="" class="nav-link icon me-md-2" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa-solid fa-user"></i>
           </a>
@@ -75,9 +76,10 @@
               <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
             {% endif %}
           </div>
-            
-          <a href="{% url 'basket' %}" class="nav-link icon">
+          <!-- Basket -->  
+          <a href="{% url 'basket' %}" class="nav-link icon {% if bag_items %}font-weight-bold{% endif %}">
               <i class="fa-solid fa-basket-shopping"></i>
+              <span class="quantity ps-1">{{ basket_items|length }}</span>
           </a>
         </div>
         
