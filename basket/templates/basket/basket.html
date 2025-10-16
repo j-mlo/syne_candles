@@ -4,18 +4,66 @@
 {% block content %}
 <div class="container h-100">
     <div class="row h-100">
-        <div class="col-12 mt-5 mb-auto ps-4">
-            <div class="col-12">
-                <h2 class="mb-3">Shopping Basket</h2>
+
+        <div class="col-12 my-4 ps-4">
+            <h2 class="mb-3">Shopping Basket</h2>
+            <hr>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {% if basket_items %}
+                    <div class="table-responsive-rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product Information</th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                            </thead>
+                            {% for item in basket_items %}
+                                <tr>
+                                    <td class="p-3"> 
+                                        <img src="{{ item.product.main_image.url }}" alt="{{ item.product.name }}" width="80">
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                                        <p class="my-0 small text-muted">SKU: {{ item.product.sku }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">£{{ item.product.price }}</p>
+                                    </td>
+                                    <td class="py-3 w-25">
+                                        <p class="my-0">{{ item.quantity }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">{{ item.product.price }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-end">
+                                    <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
+                                    <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                                    <h5><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h5>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-end">
+                                    <a class="btn btn-lg btn-white" href="{% url 'products' %}">Keep Shopping</a>
+                                    <a class="btn btn-lg btn-black" href="">Checkout</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                {% else %}
+                    <p class="lead mt-5 mb-3">Your basket is currently empty...</p>
+                    <a class="btn btn-lg btn-black" href="{% url 'products' %}">Keep Shopping</a>
+                {% endif %}
             </div>
-            {% if basket_items %}
-                <div class="table-responsive-rounded">
-                    {{ basket_items }}
-                </div>
-            {% else %}
-                <p class="lead mt-5 mb-3">Your basket is currently empty...</p>
-                <a class="btn btn-lg btn-black" href="{% url 'products' %}">Keep Shopping</a>
-            {% endif %}
         </div>
     </div>
 </div>

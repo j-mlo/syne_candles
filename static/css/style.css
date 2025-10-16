@@ -8,7 +8,6 @@ body {
     height: calc(100vh - 164px);
     font-family: 'DM Sans', sans-serif;
     font-weight: 200;
-    padding-bottom: 60px;
 }
 
 .general-link {
@@ -40,6 +39,7 @@ body {
     background-color: black;
     color: white;
     border-radius: 0%;
+    border: 2px solid black;
 }
 
 .btn-black:hover {
@@ -47,6 +47,20 @@ body {
     color: black;
     border-radius: 0%;
     border: 2px solid black;
+}
+
+.btn-white {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 0%;
+}
+
+.btn-white:hover {
+    background-color: #5B3822;
+    color: white;
+    border-radius: 0%;
+    border: 2px solid #5B3822;
 }
 
 /* from Bulma */
@@ -120,7 +134,7 @@ nav a:hover {
 
 .quantity-input {
     border: 2px solid black;
-    display: block;
+    text-align: center;
 }
 
 /* FOOTER */
@@ -146,5 +160,6 @@ footer {
 
     body {
         padding-top: 153px; /* Pushes the body to not overlap with the header & navbar */ 
+        padding-bottom: 100px;
     }
 }
