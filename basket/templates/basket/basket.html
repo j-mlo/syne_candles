@@ -4,8 +4,16 @@
 {% block content %}
 <div class="container h-100">
     <div class="row h-100">
-        <div class="col-12 my-auto ps-4">
-            
+        <div class="col-12 mt-5 mb-auto ps-4">
+            <div class="col-12">
+                <h2 class="mb-3">Shopping Basket</h2>
+            </div>
+            {% if basket_items %}
+                <div class="table-responsive-rounded"></div>
+            {% else %}
+                <p class="lead mt-5 mb-3">Your basket is currently empty...</p>
+                <a class="btn btn-lg btn-black" href="{% url 'products' %}">Keep Shopping</a>
+            {% endif %}
         </div>
     </div>
 </div>

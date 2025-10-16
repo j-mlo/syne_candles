@@ -61,9 +61,18 @@
                                             <small><i class="fa-solid fa-star"> {{ product.rating }}</i></small>
                                         {% endif %}
                                     </div>
-                                    <!-- Add to bag button -->
-                                    <form method="POST" action="">
-                                        <button type="submit" class="btn btn-sm btn-black">Add to bag</button>
+                                    <!-- Add to cart button -->
+                                    <form method="POST" action="{% url 'add_to_basket' product.id %}">
+                                        {% csrf_token %}
+                                        <div class="form-row">
+                                            <div class="col-12">
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control rounded-0 quantity-input" name="quantity" value="1" min="1" id="id_qty_{{ product.id }}">
+                                                    <button type="submit" class="btn btn-sm btn-black">Add to bag <i class="fa-solid fa-plus"></i></button>
+                                                </div>
+                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
