@@ -81,6 +81,10 @@ body {
     padding: 0;
 }
 
+.quantity-icon:hover {
+    color: #5B3822;
+}
+
 /* MAIN HEADER */
 
 .logo-img img {
@@ -139,6 +143,22 @@ nav a:hover {
 .quantity-input {
     border: 1px solid black;
     text-align: center;
+}
+
+.update-link {
+    color: #5B3822;
+}
+
+.update-link:hover {
+    color: #5B3822;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.remove-item:hover {
+    color: red;
+    font-weight: bolder;
+    text-decoration: none;
 }
 
 /* BASKET */
