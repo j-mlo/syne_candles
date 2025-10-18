@@ -80,7 +80,7 @@
           <!-- Basket -->  
           <a href="{% url 'basket' %}" class="nav-link icon {% if bag_items %}font-weight-bold{% endif %}">
               <i class="fa-solid fa-basket-shopping"></i>
-              <span class="quantity ps-1">{{ basket_items|length }}</span>
+              <span class="quantity ps-1">{{ product_count }}</span>
           </a>
         </div>
         

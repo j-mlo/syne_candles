@@ -44,7 +44,7 @@
                                         <p class="my-0">£{{ item.product.price }}</p>
                                     </td>
                                     <!-- Qty -->
-                                    <td class="w-25">
+                                    <td id="qty-col">
                                         <form method="POST" action="{% url 'update_basket' item.item_id %}" class="form update-form">
                                             {% csrf_token %}
                                             <div class="form-group">
@@ -92,8 +92,8 @@
 
                             <tr>
                                 <td colspan="5" class="text-end">
-                                    <a class="btn btn-lg btn-white" href="{% url 'products' %}">Keep Shopping</a>
-                                    <a class="btn btn-lg btn-black" href="">Checkout</a>
+                                    <a class="btn btn-lg btn-white text-uppercase" href="{% url 'products' %}">Keep Shopping</a>
+                                    <a class="btn btn-lg btn-black text-uppercase" href="">Secure Checkout</a>
                                 </td>
                             </tr>
 

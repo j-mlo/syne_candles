@@ -61,13 +61,13 @@
                                             <small><i class="fa-solid fa-star"> {{ product.rating }}</i></small>
                                         {% endif %}
                                     </div>
-                                    <!-- Add to cart button -->
+                                    <!-- Add to basket button -->
                                     <form method="POST" action="{% url 'add_to_basket' product.id %}">
                                         {% csrf_token %}
                                         <div class="form-row">
                                             <div class="col-12">
                                                 <div class="input-group">
-                                                    <button type="submit" class="btn btn-sm btn-black">Add to bag <i class="fa-solid fa-plus"></i></button>
+                                                    <button type="submit" class="btn btn-sm btn-black">Add to basket <i class="fa-solid fa-plus"></i></button>
                                                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
                                                 </div>
                                             </div>

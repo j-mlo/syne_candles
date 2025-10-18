@@ -52,7 +52,7 @@
                 {% endif %}
             </div>
 
-            <!-- Add to cart button -->
+            <!-- Add to basket button -->
             <form method="POST" action="{% url 'add_to_basket' product.id %}">
                 {% csrf_token %}
                 <div class="form-group">
@@ -76,7 +76,7 @@
                                 </span>
                             </button>
                         </div>
-                        <button type="submit" class="btn btn-sm btn-black">Add to bag</button>
+                        <button type="submit" class="btn btn-sm btn-black">Add to basket</button>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
                 </div>

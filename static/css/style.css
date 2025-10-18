@@ -185,6 +185,10 @@ nav a:hover {
     cursor: pointer;
 }
 
+.update-form {
+
+}
+
 /* FOOTER */
 
 footer {
@@ -195,11 +199,32 @@ footer {
 
 /* ------------------------- MEDIA QUERIES */
 
+/* Small Screens only */
+
+@media (max-width: 425px) {
+
+    /* toasts */
+    .message-container {
+        max-width: 300px; /* fits on the smaller screen */
+    }
+
+    #view-basket-btn {
+        margin-bottom: 10px; /* creates margin between 'view bag' & 'checkout' btn when stacked */
+    } 
+
+}
+
 /* Medium Screens and below */
 @media (max-width: 992px) {
 
     body {
         padding-top: 119px; /* Pushes the body to not overlap with the header */ 
+    }
+
+    /* basket */
+
+    #qty-col {
+        /* quality input number not visible on sm screens - add attributes to make fit */
     }
 }
 
