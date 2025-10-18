@@ -7,9 +7,13 @@ from django.conf import settings
 from django_countries.fields import CountryField
 
 from products.models import Product
+from profiles.models import UserProfile
 
 # Create your models here.
 class Order(models.Model):
+    """
+    A model for generating an order.
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     # user = models.ForeignKey(UserProfile, on_delete=SET_NULL, null=True, blank=True, related_name='orders')
     full_name = models.CharField(max_length=60, null=False, blank=False)
@@ -19,7 +23,7 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=60, null=True, blank=True)
     town_or_city = models.CharField(max_length=50, null=False, blank=False)
     postcode = models.CharField(max_length=20, null=True, blank=True)
-    country = CountryField(blank_label='Country*', null=False, blank=False)
+    country = CountryField(blank_label='Country *', null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
