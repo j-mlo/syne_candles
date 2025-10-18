@@ -54,10 +54,12 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
+    'django_countries',
 
     'home',
     'products',
     'basket',
+    'checkout',
 ]
 
 SITE_ID = 1
