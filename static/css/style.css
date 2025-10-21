@@ -11,13 +11,13 @@ body {
 }
 
 .general-link {
-    color: black;
+    color: #7C4D3C;
     text-decoration: none;
     border-bottom: 1px solid black;
 }
 
 .general-link:hover {
-    color: black;
+    color: #7C4D3C;
     font-weight: bolder;
     text-decoration: none;
     border: none;
@@ -87,7 +87,7 @@ body {
 }
 
 .icon:hover {
-    color: #5B3822;
+    color: #7C4D3C;
 }
 
 .arrow-icon {
@@ -99,10 +99,10 @@ body {
 }
 
 .quantity-icon:hover {
-    color: #5B3822;
+    color: #7C4D3C;
 }
 
-/* MAIN HEADER */
+/* MAIN HEADER (Search bar, Logo, User/Basket & Navbar) */
 
 .logo-img img {
     display: inline-block;
@@ -131,6 +131,21 @@ body {
 
 nav a:hover {
     text-decoration: underline;
+}
+
+#user-dropdown {
+    background-color: rgba(255, 253, 249, 0.85);
+    border-radius: 0;
+}
+
+#user-dropdown a:hover {
+    text-decoration: underline;
+}
+
+#user-dropdown a::after {
+    font-weight: 400;
+    color: white;
+    background-color: #7C4D3C;
 }
 
 /* HOMEPAGE */
