@@ -34,8 +34,10 @@ body {
 .btn-black {
     background-color: black;
     color: white;
+    text-transform: uppercase;
     border-radius: 0%;
     border: 2px solid black;
+    margin: 5px 10px;
 }
 
 .btn-black:hover {
@@ -43,6 +45,7 @@ body {
     color: black;
     border-radius: 0%;
     border: 2px solid black;
+    margin: 5px 10px;
 }
 
 .btn-white {
@@ -50,6 +53,7 @@ body {
     color: black;
     border: 2px solid black;
     border-radius: 0%;
+    margin: 5px 10px;
 }
 
 .btn-white:hover {
@@ -57,6 +61,7 @@ body {
     color: white;
     border-radius: 0%;
     border: 2px solid #5B3822;
+    margin: 5px 10px;
 }
 
 /* Toasts */
@@ -76,8 +81,9 @@ body {
     height: 2px;
 }
 
-/* from Bulma */
-.icon {
+/* Icons */
+
+.icon /* from Bulma */ {
     color: black;
     align-items: center;
     display: inline-flex;
@@ -136,6 +142,8 @@ nav a:hover {
 #user-dropdown {
     background-color: rgba(255, 253, 249, 0.85);
     border-radius: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 200;
 }
 
 #user-dropdown a:hover {
@@ -203,6 +211,45 @@ nav a:hover {
 .update-form {
 
 }
+
+/* ALLAUTH FORM FORMATTING */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+}
+
+.allauth-form-inner-content input {
+    border: 1px solid black;
+    border-radius: 0;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #7C4D3C;
+}
+
+.allauth-form-inner-content button,
+.allauth-form-inner-content input[type='submit'] {
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 0%;
+    border: 2px solid black;
+    border-radius: 0;
+    padding: 0.3rem 0.7rem;
+    margin: 5px 10px;
+}
+
+.allauth-form-inner-content button:hover,
+.allauth-form-inner-content input[type='submit']:hover {
+    background-color: white;
+    color: black;
+    border-radius: 0%;
+    border: 2px solid black;
+    margin: 5px 10px;
+}
+
 
 /* FOOTER */
 

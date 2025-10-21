@@ -35,12 +35,8 @@
                         TOTAL (exc. delivery):
                         <span class="float-right bold">£{{ total|floatformat:2 }}</span> 
                     </strong></p>
-                    <a href="{% url 'basket' %}" class="btn btn-white rounded-0" id="view-basket-btn">
-                        <span class="text-uppercase">View Basket</span>
-                    </a>
-                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0">
-                        <span class="text-uppercase">Secure Checkout</span>
-                    </a>
+                    <a href="{% url 'basket' %}" class="btn btn-white rounded-0" id="view-basket-btn">View Basket</a>
+                    <a href="{% url 'checkout' %}" class="btn btn-black rounded-0">Secure Checkout</a>
                 </div>
             </div>
         {% endif %}
