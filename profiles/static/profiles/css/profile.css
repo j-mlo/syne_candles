@@ -1,0 +1,17 @@
+.profile-form-input {
+    border: 1px solid black;
+    color: black;
+}
+
+.profile-form-input::placeholder {
+    color: #7C4D3C;
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: black;
+}
+
+#id_default_country option:first-child {
+    color: #7C4D3C;
+}
