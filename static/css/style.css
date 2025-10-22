@@ -24,6 +24,19 @@ body {
     border: none;
 }
 
+.text-danger {
+    color: #dc3545;
+    text-decoration: none;
+    border-bottom: 1px solid #dc3545;
+}
+
+.text-danger:hover {
+    color: #dc3545;
+    font-weight: bolder;
+    text-decoration: none;
+    border: none;
+}
+
 /* Buttons */
 
 .shop-now-button {

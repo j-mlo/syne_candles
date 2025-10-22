@@ -22,6 +22,15 @@
             <div class="mb-5 mt-md-5" id="product-detail-container">
                 <!-- Product Info -->
                 <h4 class="mb-0">{{ product.name }}</h4>
+
+                <div>
+                    {% if request.user.is_superuser %}
+                        <small class="ml-3">
+                            <a href="{% url 'edit_product' product.id %}" class="general-link">Edit</a> | 
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        </small>
+                    {% endif %}
+                </div>
                 
                 <div class="row">
                     <div class="col-6">
