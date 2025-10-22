@@ -32,7 +32,11 @@
                                 <tr>
                                     <!-- Image -->
                                     <td class="p-3"> 
-                                        <img src="{{ item.product.main_image.url }}" alt="{{ item.product.name }}" width="80">
+                                        {% if product.main_image %}
+                                            <img src="{{ item.product.main_image.url }}" alt="{{ item.product.name }}" width="80">
+                                        {% else %}
+                                            <img src="/media/products/product-placeholder.jpg" alt="{{ item.product.name }}" width="80">
+                                        {% endif %}
                                     </td>
                                     <!-- Name & SKU -->
                                     <td class="py-3">
