@@ -5,9 +5,10 @@ html {
 }
 
 body {
-    height: calc(100vh - 164px);
+    min-height: 100vh;
     font-family: 'DM Sans', sans-serif;
     font-weight: 200;
+    padding-bottom: 100px; /* pushes footer down */
 }
 
 .general-link {
@@ -295,6 +296,6 @@ footer {
 
     body {
         padding-top: 153px; /* Pushes the body to not overlap with the header & navbar */ 
-        padding-bottom: 100px;
+        
     }
 }
