@@ -20,3 +20,9 @@
     max-height: 416px;
     overflow-y: auto;
 }
+
+.order-history a {
+    color: #7C4D3C;
+    text-decoration: none;
+    border-bottom: 1px solid #7C4D3C;
+}

@@ -14,7 +14,7 @@ body {
 .general-link {
     color: #7C4D3C;
     text-decoration: none;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #7C4D3C;
 }
 
 .general-link:hover {
